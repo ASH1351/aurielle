@@ -111,8 +111,8 @@
         <div class="currency-selector-top" title="Select your currency">
           <span>Currency:</span>
           <select class="currency-select" aria-label="Currency Selector">
+            <option value="INR" selected>INR (₹)</option>
             <option value="USD">USD ($)</option>
-            <option value="INR">INR (₹)</option>
             <option value="EUR">EUR (€)</option>
             <option value="GBP">GBP (£)</option>
           </select>
@@ -147,8 +147,17 @@
       </nav>
 
       <!-- Center: Refined Wordmark Logo with Gold Star over 'i' -->
-      <a href="#hero" class="nav-brand" aria-label="Aurielle Home - Timeless Beauty Luxury Wear">
-        <img src="assets/icons/logo-compact.svg" alt="AURIELLE — Timeless Beauty • Luxury Wear" class="nav-brand-img" />
+      <a href="#hero" class="nav-brand" aria-label="AURIELLE — Timeless Beauty • Luxury Wear">
+        <div class="nav-brand-lockup">
+          <div class="nav-brand-wordmark">
+            Aur<span class="brand-star-i"><span class="brand-star-glyph">✦</span>i</span>elle
+          </div>
+          <div class="nav-brand-tagline">
+            <span class="tag-beauty">TIMELESS BEAUTY</span>
+            <span class="tag-star">✦</span>
+            <span class="tag-wear">LUXURY WEAR</span>
+          </div>
+        </div>
       </a>
 
       <!-- Right: Search, Wishlist, Cart -->
@@ -174,7 +183,16 @@
   <!-- Mobile Fullscreen Menu -->
   <div class="mobile-menu-overlay" aria-hidden="true">
     <div class="mobile-menu-header">
-      <img src="assets/icons/logo-compact.svg" alt="AURIELLE" style="height:44px; width:auto;" />
+      <div class="nav-brand-lockup" style="margin: 0 auto; transform: scale(0.9);">
+        <div class="nav-brand-wordmark">
+          Aur<span class="brand-star-i"><span class="brand-star-glyph">✦</span>i</span>elle
+        </div>
+        <div class="nav-brand-tagline">
+          <span class="tag-beauty">TIMELESS BEAUTY</span>
+          <span class="tag-star">✦</span>
+          <span class="tag-wear">LUXURY WEAR</span>
+        </div>
+      </div>
       <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
     </div>
 
@@ -197,8 +215,8 @@
         Select Currency:
       </div>
       <select class="currency-select currency-select-mobile" aria-label="Mobile Currency">
+        <option value="INR" selected>INR (₹) — India</option>
         <option value="USD">USD ($) — United States</option>
-        <option value="INR">INR (₹) — India</option>
         <option value="EUR">EUR (€) — European Union</option>
         <option value="GBP">GBP (£) — United Kingdom</option>
       </select>
@@ -896,7 +914,20 @@
       
       <!-- Full Brand Lockup in Center -->
       <div class="footer-top-lockup">
-        <img src="assets/icons/logo-dark.svg" alt="AURIELLE — Timeless Beauty • Luxury Wear" class="footer-logo-svg" loading="lazy" />
+        <div class="footer-brand-lockup">
+          <div class="footer-brand-wordmark">
+            Aur<span class="brand-star-i"><span class="brand-star-glyph footer-star-glow">✦</span>i</span>elle
+          </div>
+          <div class="footer-brand-divider">
+            <span class="footer-divider-line"></span>
+            <span class="footer-divider-star">✦</span>
+            <span class="footer-divider-line"></span>
+          </div>
+          <div class="footer-brand-tagline">
+            <span class="footer-tag-beauty">TIMELESS BEAUTY</span>
+            <span class="footer-tag-wear">LUXURY WEAR</span>
+          </div>
+        </div>
       </div>
 
       <div class="footer-grid">
@@ -996,7 +1027,7 @@
       <!-- Free Shipping Meter -->
       <div class="shipping-meter">
         <div class="meter-text">
-          Complimentary white-glove shipping unlocks at <span class="gold-bold">$500</span>
+          Complimentary white-glove shipping unlocks at <span class="gold-bold">₹41,500</span>
         </div>
         <div class="meter-bar">
           <div class="meter-bar-fill" style="width: 0%;"></div>
@@ -1026,11 +1057,11 @@
 
         <div class="cart-summary-row">
           <span>Bag Subtotal</span>
-          <span class="cart-subtotal-val">$0</span>
+          <span class="cart-subtotal-val">₹0</span>
         </div>
         <div class="cart-summary-row cart-discount-row" style="display:none; color:var(--gold-dark);">
           <span>VIP Privilège</span>
-          <span class="cart-discount-val">-$0</span>
+          <span class="cart-discount-val">-₹0</span>
         </div>
         <div class="cart-summary-row">
           <span>Worldwide Shipping</span>
@@ -1038,7 +1069,7 @@
         </div>
         <div class="cart-summary-row cart-summary-total">
           <span>Estimated Total</span>
-          <span class="cart-total-val">$0</span>
+          <span class="cart-total-val">₹0</span>
         </div>
 
         <button class="btn btn-black btn-checkout" onclick="alert('Proceeding to Aurielle 256-bit encrypted checkout concierge.');">

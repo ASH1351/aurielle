@@ -684,7 +684,7 @@ section {
   color: var(--gold-dark);
 }
 
-/* Brand Wordmark in Nav (Center Column, Guaranteed Visibility) */
+/* Brand Wordmark in Nav (Center Column, Guaranteed 100% Visibility) */
 .nav-brand {
   display: flex;
   flex-direction: column;
@@ -694,17 +694,82 @@ section {
   z-index: 10;
   padding: 0 1rem;
   transition: transform var(--transition-fast);
+  cursor: pointer;
 }
 
 .nav-brand:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-.nav-brand-img {
-  height: clamp(42px, 5.2vw, 54px);
-  width: auto;
-  max-width: 260px;
-  display: block;
+.nav-brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.nav-brand-wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.brand-star-i {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.brand-star-glyph {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 0.85rem;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(198, 161, 91, 0.8);
+  animation: starPulse 3s infinite;
+  pointer-events: none;
+}
+
+.nav-brand-tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.tag-beauty {
+  color: var(--text-main);
+}
+
+.tag-star {
+  color: var(--gold);
+  font-size: 0.48rem;
+}
+
+.tag-wear {
+  color: var(--gold);
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Nav Actions (Right Column) */
@@ -2093,11 +2158,84 @@ section {
   border-bottom: 1px solid rgba(198, 161, 91, 0.25);
 }
 
-.footer-logo-svg {
+.footer-brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.footer-brand-wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  position: relative;
+  margin-bottom: 0.9rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.footer-star-glow {
+  top: -12px !important;
+  font-size: 1.25rem !important;
+  text-shadow: 0 0 14px rgba(198, 161, 91, 0.95);
+}
+
+.footer-brand-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
   width: 100%;
   max-width: 320px;
-  height: auto;
-  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.footer-divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.footer-divider-star {
+  color: var(--gold);
+  font-size: 0.95rem;
+  animation: starPulse 3s infinite;
+}
+
+.footer-brand-tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-tag-beauty {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #D9C9AE;
+}
+
+.footer-tag-wear {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-grid {
@@ -2855,8 +2993,12 @@ section {
     margin: 0 auto;
     padding: 0 0.4rem;
   }
-  .nav-brand-img {
-    height: 40px;
+  .nav-brand-wordmark {
+    font-size: 1.85rem;
+  }
+  .nav-brand-tagline {
+    font-size: 0.44rem;
+    letter-spacing: 0.22em;
   }
   .nav-actions {
     order: 3;
@@ -3010,5 +3152,12 @@ section {
   .filter-bar-wrap {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .nav-brand-wordmark {
+    font-size: 1.6rem;
+  }
+  .nav-brand-tagline {
+    font-size: 0.38rem;
+    letter-spacing: 0.16em;
   }
 }

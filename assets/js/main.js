@@ -10,13 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Data Store: Products & Currencies
   // --------------------------------------------------------------------------
   const currencies = {
-    USD: { code: 'USD', symbol: '$', rate: 1, prefix: true },
     INR: { code: 'INR', symbol: '₹', rate: 83, prefix: true },
+    USD: { code: 'USD', symbol: '$', rate: 1, prefix: true },
     EUR: { code: 'EUR', symbol: '€', rate: 0.93, prefix: true },
     GBP: { code: 'GBP', symbol: '£', rate: 0.80, prefix: true }
   };
 
-  let currentCurrency = localStorage.getItem('aurielle_currency') || 'USD';
+  // Default currency is Indian Rupee (INR ₹)
+  let savedCurrency = localStorage.getItem('aurielle_currency');
+  let currentCurrency = (savedCurrency && savedCurrency !== 'USD') ? savedCurrency : 'INR';
+  localStorage.setItem('aurielle_currency', currentCurrency);
   let appliedDiscount = 0; // percentage, e.g. 10 for 10%
 
   const products = [
@@ -247,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Currency Conversion Helpers
   // --------------------------------------------------------------------------
   function formatPrice(usdPrice) {
-    const cur = currencies[currentCurrency] || currencies.USD;
+    const cur = currencies[currentCurrency] || currencies.INR;
     const converted = Math.round(usdPrice * cur.rate);
     
     if (cur.code === 'INR') {
